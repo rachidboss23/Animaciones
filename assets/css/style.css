@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "nav header"
+    "nav main"
+    "nav main"
+    "footer aside"
+    "footer aside";
+  height: 100vh;
+  grid-template-columns: 15% auto;
+}
+
+h1 {
+  margin-left: 15px;
+}
+
+.link {
+  margin-left: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+.menu {
+  margin-bottom: 15px;
+}
+.p  {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+nav {
+  grid-area: nav;
+  background-color: aquamarine;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav li a {
+  text-decoration: none;
+}
+header {
+  grid-area: header;
+  background-color: aqualo;
+}
+
+main {
+  grid-area: main;
+}
+
+#contacto {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(157, 76, 233);
+}
+
+.card {
+  width: 200px;
+
+  position: relative;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+  border: 0.1rem rgba(255, 255, 255, 0.806);
+  background-color: rgb(228, 226, 226);
+}
+
+.card h2 {
+  margin-top: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+h1{
+    background-color: rgb(157, 76, 233);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card-back {
+  background-color:aquamarine;
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  transform: rotateY(180deg);
+  transition: all 1s ease;
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+@media (max-width: 576px) {
+  body {
+    grid-template-areas:
+      "nav"
+      "header"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 100%;
+  }
+
+  .card-back {
+    background-color: transparent;
+    backface-visibility: visible;
+    position: relative;
+    height: 100%;
+    transform: rotateY(180deg);
+    transition: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
